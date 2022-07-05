@@ -1,16 +1,31 @@
 package level1;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class bj2588 {
-	public static void main(String[] args) {
-		 Scanner sc = new Scanner(System.in);
-	        int input1 = sc.nextInt();
-	        String input2 = sc.next();
-	        sc.close();
-	        System.out.println(input1 * (input2.charAt(2) - '0'));
-	        System.out.println(input1 * (input2.charAt(1) - '0'));
-	        System.out.println(input1 * (input2.charAt(0) - '0'));
-	        System.out.println(input1 * Integer.parseInt(input2));
-	    }
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+ 
+		int A = Integer.parseInt(br.readLine());
+		int B = Integer.parseInt(br.readLine());
+		
+		br.close();
+        
+		StringBuilder sb = new StringBuilder();
+        
+		sb.append(A * (B%10));
+		sb.append('\n');
+		
+		sb.append(A * ((B%100)/10));
+		sb.append('\n');
+        
+		sb.append(A * (B/100));
+		sb.append('\n');
+        
+		sb.append(A * B);
+ 
+		System.out.print(sb);
 	}
+}
