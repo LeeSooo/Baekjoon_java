@@ -10,8 +10,8 @@ public class bj9498 {
 	public static void main(String[] args) throws IOException {
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int A = Integer.parseInt(br.readLine());
+		int input = Integer.parseInt(br.readLine());
 		
-		System.out.print((A>=90)?"A": (A>=80)? "B": (A>=70)? "C": (A>=60)? "D": "F");
+		System.out.print((input>=90)?"A": (input>=80)? "B": (input>=70)? "C": (input>=60)? "D": "F");
 	}
 }
