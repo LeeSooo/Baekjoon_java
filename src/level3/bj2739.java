@@ -22,7 +22,7 @@ public class bj2739 {
 			sb.append(' ').append('=').append(' ').append(a*i).append('\n');
 		}
 		
-		// StringBuilder 을 쓴 코드인데 필자가 테스트해본 결과 sb.append(a+" * "+i+" = "+a*i+"\n"); 으로 한번에 넣어주는 것보다 
+		// 테스트 해본 결과 sb.append(a+" * "+i+" = "+a*i+"\n"); 으로 한번에 넣어주는 것보다 
 		// 위와 같이 문자를 하나씩 append 해주는 것이 속도가 조금 더 빠른 것으로 나온다. 
 		// 이유는 잘 모르겠다...
 		
