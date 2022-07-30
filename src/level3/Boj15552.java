@@ -7,7 +7,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
  
-public class bj15552 {
+public class Boj15552 {
 	public static void main(String[] args) throws IOException {
 		 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
