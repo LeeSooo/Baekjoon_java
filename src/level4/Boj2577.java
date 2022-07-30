@@ -7,7 +7,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class bj2577 {
+public class Boj2577 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int[] arr = new int[10]; // 0~9까지 각 숫자의 개수를 저장하는 필드 (int배열 초기 값은 모두 0)
