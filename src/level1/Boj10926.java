@@ -10,7 +10,7 @@ import java.io.InputStreamReader;
 
 // - Scanner와 BufferedReader 입력 속도를 비교해 보았을 때, BuffferedReader가 더 빠른 걸 볼 수 있다.
 
-public class bj10926 {
+public class Boj10926 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		

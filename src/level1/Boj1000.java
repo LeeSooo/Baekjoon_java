@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
  
-public class bj1000 {
+public class Boj1000 {
 	public static void main(String[] args) throws IOException {
 		/* 방법 1. (System 클래스 - 표준 입출력)
 		 * Scanner in = new Scanner(System.in);		

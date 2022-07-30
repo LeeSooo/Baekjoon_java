@@ -7,7 +7,7 @@ import java.io.BufferedWriter;
 import java.io.OutputStreamWriter;
 import java.io.IOException;
  
-public class bj10718 {
+public class Boj10718 {
 	public static void main(String[] args) throws IOException {
 		/* 
 		 * 방법 1. (System 클래스 - 표준 입출력)

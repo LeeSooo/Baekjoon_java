@@ -1,6 +1,6 @@
 package level1;
 
-public class bj25083 {
+public class Boj25083 {
 
 	public static void main(String[] args) {
 		String s = "         ,r'\"7\n" + 	// \", \n 이 제어문자다.

@@ -14,7 +14,7 @@ import java.io.BufferedWriter;
 import java.io.OutputStreamWriter;
 import java.io.IOException;
 
-public class bj10171 {
+public class Boj10171 {
 	public static void main(String[] args) throws IOException {
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
  

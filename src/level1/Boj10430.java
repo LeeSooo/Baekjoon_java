@@ -13,7 +13,7 @@ import java.io.OutputStreamWriter;
 import java.io.IOException;
 import java.util.StringTokenizer;
 
-public class bj10430 {
+public class Boj10430 {
 	public static void main(String[] args) throws IOException {
 		     
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
