@@ -40,6 +40,10 @@ public class Boj4344 {
 				if(arr[j] > mean)
 					count++;
 			}
+			
+			// 소수점 셋째자리 출력 시 printf() 사용
+			// - &.3f : 소수점 셋째자리
+			// - %% : % 문자를 출력 시 사용
 			System.out.printf("%.3f%%\n",(count/N)*100);
 		}
 	}

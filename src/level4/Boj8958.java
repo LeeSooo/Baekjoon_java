@@ -14,9 +14,11 @@ public class Boj8958 {
 		int test_case = Integer.parseInt(br.readLine());	//테스트 케이스
 		String arr[] = new String[test_case];
  
+		// OX 입력을 위한 for문
 		for (int i = 0; i < test_case; i++) 
 			arr[i] = br.readLine();
 		
+		// 점수 환산을 위한 for문
 		for (int i = 0; i < test_case; i++) {
 			int cnt = 0;	// 연속횟수
 			int sum = 0;	// 누적 합산 
