@@ -13,7 +13,7 @@ public class Boj2577 {
 		int[] arr = new int[10]; // 0~9까지 각 숫자의 개수를 저장하는 필드 (int배열 초기 값은 모두 0)
 		int val = Integer.parseInt(br.readLine()) * Integer.parseInt(br.readLine()) * Integer.parseInt(br.readLine());
 
-		String str = String.valueOf(val);
+		String str = String.valueOf(val); 	// 입력받은 인자 값을 String객체로 변환시키는 역활
  
 		// 반드시 charAt()을 사용할 경우 : '0' 또는 -48 을 연산해야 한다. (But, 아스키코드에 대응하는 문자가 나옴.)
 		for (int i = 0; i < str.length(); i++) 

@@ -10,23 +10,27 @@ public class Boj8958 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
+		
+		int test_case = Integer.parseInt(br.readLine());	//테스트 케이스
+		String arr[] = new String[test_case];
  
-		int test_case = Integer.parseInt(br.readLine()); // 테스트 케이스
- 
+		for (int i = 0; i < test_case; i++) 
+			arr[i] = br.readLine();
+		
 		for (int i = 0; i < test_case; i++) {
-			int cnt = 0; // 연속횟수
-			int sum = 0; // 누적 합산
- 
-			for (byte value : br.readLine().getBytes()) {
-				if (value == 'O') {
+			int cnt = 0;	// 연속횟수
+			int sum = 0;	// 누적 합산 
+			
+			for (int j = 0; j < arr[i].length(); j++) {
+				if (arr[i].charAt(j) == 'O') 
 					cnt++;
-					sum += cnt;
-				} 
-				else 
+				 else 
 					cnt = 0;
+				sum += cnt;
 			}
+			
 			sb.append(sum).append('\n');
 		}
-		System.out.println(sb);
+		System.out.print(sb);
 	}
 }
