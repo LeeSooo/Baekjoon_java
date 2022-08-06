@@ -2,9 +2,9 @@ package algorithm;
 
 // 최댓값 찾기 알고리즘
 // 자바로 쉽게 배우는 알고리즘 - p.26
-public class FindMax {
+public class Ex_FindMax {
 	public static void main(String[] args) {
-		FindMax fm = new FindMax();
+		Ex_FindMax fm = new Ex_FindMax();
 		int[] arr = new int[] {20, 30, 67, 2, 94, 47};
 		int max = fm.findMaximum(arr);
 		System.out.println(max);
