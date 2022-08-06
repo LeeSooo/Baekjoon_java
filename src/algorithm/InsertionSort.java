@@ -1,5 +1,14 @@
 package algorithm;
 
+// 삽입 정렬
+// 삽입 정렬은 현재 비교하고자 하는 target(타겟)과 그 이전의 원소들과 비교하며 자리를 교환(swap)하는 정렬 방법이다.
+
+/* - 삽입 정렬의 전체적인 과정(오름차순을 기준)
+ * 1. 현재 타겟이 되는 숫자와 이전 위치에 있는 원소들을 비교한다. (첫 번째 타겟은 두 번째 원소부터 시작한다.)
+ * 2. 타겟이 되는 숫자가 이전 위치에 있던 원소보다 작다면 위치를 서로 교환한다.
+ * 3. 그 다음 타겟을 찾아 위와 같은 방법으로 반복한다. 
+ */
+
 public class InsertionSort {
 	public static void main(String[] args) {
 		int[] intArr = {45, 89, 67, 92, 53, 74, 26, 80};
@@ -19,6 +28,7 @@ public class InsertionSort {
 			System.out.print(intArr[i] + " ");
 	}
 
+	// 삽입 정렬 메소드
 	private static void insertionSort(int[] A) {
 		int i, j, insertElement;
 		int n = A.length;
