@@ -9,6 +9,10 @@ package algorithm;
  * 3. 그 다음 타겟을 찾아 위와 같은 방법으로 반복한다. 
  */
 
+/* 단순(구현 간단)하지만 비효율적인 방법
+ * - 삽입 정렬, 선택 정렬, 버블 정렬
+ */
+
 public class InsertionSort {
 	public static void main(String[] args) {
 		int[] intArr = {45, 89, 67, 92, 53, 74, 26, 80};
