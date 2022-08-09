@@ -1,7 +1,8 @@
 package algorithm;
 
 // p.87 선택 정렬
-// 선택 정렬은 말 그대로 현재 위치에 들어갈 데이터를 찾아 선택하는 알고리즘이다.
+// 선택정렬은 조건(최소값, 최대값)을 선택하고, 정렬하는 알고리즘이다.
+
 // 데이터를 '비교'하면서 찾기 때문에 '비교 정렬'이며
 // 정렬의 대상이 되는 데이터 외에 추가적인 공간을 필요로 하지 않기 때문에 '제자리 정렬(in-place sort)'이기도 하다.
 
@@ -38,15 +39,18 @@ public class SelectionSort {
 			System.out.print(intArr[i] + " ");
 	}
 
-	// 선택 정렬 메소드
+	// 선택 정렬 메소드 : 조건(최소값) 선택 정렬(오름차순) 
+	// 조건을 (최소값)으로 선택하여 정렬하는 알고리즘.
 	private static void selectionSort(int[] A) {
-		int i, j, min, temp;
-		int n = A.length;
+		int min; 		// 조건 : 최소값
+		int temp;		// 교환을 하기 위해 임시로 저장되는 필드
 		
 		// A[i]부터 A[n-1]의 요소들 중 최솟값의 지수를 찾는다.
-		for(i = 0; i < n - 1; i++) {
-			min = i;
-			for (j = i + 1; j < n; j++) {
+		for(int i = 0; i < A.length - 1; i++) {
+			min = i;	
+			
+			// 최소값을 찾는 방법 : 모든 값을 비교해보기
+			for (int j = i + 1; j < A.length; j++) {
 				if(A[j] < A[min]) 
 					min = j;
 			}
