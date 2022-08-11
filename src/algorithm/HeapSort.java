@@ -48,6 +48,13 @@ package algorithm;
  * 노드가 N개일 때 수행 시간 O(log N)
  */
 
+/* [힙을 정렬하는 방법] 
+ * root 노드의 값을 바깥으로 빼고, 가장 마지막 leaf노드의 값을 root노드의 값으로 넣는다.
+ * (배열에서는 root노드의 값을 가장 마지막 leaf 노드의 값과 교환하고 힙의 크기를 1 줄인다 --> 1개를 뺀 것처럼 동작)
+ * 힙의 구조가 깨졌으므로, 다시 힙으로 수정한다.
+ * 1번과 2번을 반복하다가, 더이상 뺄 값이 없다면 정렬 완료이다. (힙의 크기가 0이 된 경우)
+ */
+
 public class HeapSort {
 	public static void main(String[] args) {
 		int[] intArr = { 0, 1, 2, 6, 4, 8, 7 };
