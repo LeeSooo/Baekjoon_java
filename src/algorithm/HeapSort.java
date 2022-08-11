@@ -117,8 +117,10 @@ public class HeapSort {
 	private static void pushDown(int[] A, int x, int bh, int eh) {
 		int y, temp;
 
+		// 현재 인덱스의 자식노드 중 큰 자식노드가 존재하는지 찾아준다.
 		y = findLarger(A, x, eh);
 
+		// 현재 인덱스와 부모노드를 비교해서 현재 인덱스가 더 크면 위치를 바꿔준다.
 		while (A[x] < A[y]) {
 			temp = A[x];
 			A[x] = A[y];
