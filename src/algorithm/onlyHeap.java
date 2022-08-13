@@ -43,33 +43,33 @@ public class onlyHeap {
     }
 
     private static void pushDown(int[] arr, int tempNode, int endNode) {
-        int y = findLarger(arr, tempNode, endNode); 
+        int larger = findLarger(arr, tempNode, endNode); 
         //자식 노드 중에서 루트 노드보다 더 큰 값을 가지는 노드 번호 얻어냄
 
-        while(arr[tempNode] < arr[y]){
-            swap(arr, tempNode, y);
-            tempNode = y;
-            y = findLarger(arr, tempNode, endNode);
+        while(arr[tempNode] < arr[larger]){
+            swap(arr, tempNode, larger);
+            tempNode = larger;
+            larger = findLarger(arr, tempNode, endNode);
             // leaf노드 쪽으로 내려가면서 값의 제자리를 찾아간다.
         }
     }
 
     //자식 노드 중에서 루트 노드보다 더 큰 값을 가지는 노드 번호 얻어냄
     private static int findLarger(int[] arr, int tempNode, int endNode){
-        int tmp = tempNode*2+1; 	// 현재 tNN의 오른쪽 자식 노드의 번호
-        int y = tempNode;		// 현재 tNN(eNN의 부모)노드의 번호
+        int rigthNode = tempNode*2+1; 	// 현재 tNN의 오른쪽 자식 노드의 번호
+        int largerNode = tempNode;		// 현재 tNN(eNN의 부모)노드의 번호
 
-        if(tmp <= endNode){//자식 노드가 두개인 경우
-            if(arr[tempNode] < arr[tmp]) //오른쪽 자식 노드의 value가 더 크다면
-                y = tmp;
-            if(arr[y] < arr[tmp-1]) //왼쪽 자식 노드의 value가 더 크다면
-                y = tmp-1;
+        if(rigthNode <= endNode){//자식 노드가 두개인 경우
+            if(arr[tempNode] < arr[rigthNode]) //오른쪽 자식 노드의 value가 더 크다면
+                largerNode = rigthNode;
+            if(arr[largerNode] < arr[rigthNode-1]) //왼쪽 자식 노드의 value가 더 크다면
+                largerNode = rigthNode-1;
         }
-        else if(tmp-1 <= endNode){ //자식 노드가 1개인(왼쪽의 자식노드만 존재하는) 경우
-            if(arr[tempNode] < arr[tmp-1]) // 자식 노드의 value가 더 크다면
-                y = tmp-1;
+        else if(rigthNode-1 <= endNode){ //자식 노드가 1개인(왼쪽의 자식노드만 존재하는) 경우
+            if(arr[tempNode] < arr[rigthNode-1]) // 자식 노드의 value가 더 크다면
+                largerNode = rigthNode-1;
         }
-        return y;
+        return largerNode;
     }
 
     private static void swap(int[] arr, int a, int b){

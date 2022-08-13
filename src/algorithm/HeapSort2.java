@@ -79,13 +79,13 @@ class HeapSort2 {
     }
 
     private static void pushDown(int[] arr, int tempNode, int endNode) {
-        int y = findLarger(arr, tempNode, endNode); 
+        int larger = findLarger(arr, tempNode, endNode); 
         //자식 노드 중에서 루트 노드보다 더 큰 값을 가지는 노드 번호 얻어냄
 
-        while(arr[tempNode] < arr[y]){
-            swap(arr, tempNode, y);
-            tempNode = y;
-            y = findLarger(arr, tempNode, endNode);
+        while(arr[tempNode] < arr[larger]){
+            swap(arr, tempNode, larger);
+            tempNode = larger;
+            larger = findLarger(arr, tempNode, endNode);
             // leaf노드 쪽으로 내려가면서 값의 제자리를 찾아간다.
         }
     }
