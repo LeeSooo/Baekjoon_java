@@ -92,20 +92,20 @@ class HeapSort2 {
 
     //자식 노드 중에서 루트 노드보다 더 큰 값을 가지는 노드 번호 얻어냄
     private static int findLarger(int[] arr, int tempNode, int endNode){
-        int tmp = tempNode*2+1; 	// 현재 tNN의 오른쪽 자식 노드의 번호
-        int y = tempNode;		// 현재 tNN(eNN의 부모)노드의 번호
+        int rightNode = tempNode*2+1; 	// 현재 tNN의 오른쪽 자식 노드의 번호
+        int largerNode = tempNode;		// 현재 tNN(eNN의 부모)노드의 번호
 
-        if(tmp <= endNode){//자식 노드가 두개인 경우
-            if(arr[tempNode] < arr[tmp]) //오른쪽 자식 노드의 value가 더 크다면
-                y = tmp;
-            if(arr[y] < arr[tmp-1]) //왼쪽 자식 노드의 value가 더 크다면
-                y = tmp-1;
+        if(rightNode <= endNode){//자식 노드가 두개인 경우
+            if(arr[tempNode] < arr[rightNode]) //오른쪽 자식 노드의 value가 더 크다면
+                largerNode = rightNode;
+            if(arr[largerNode] < arr[rightNode-1]) //왼쪽 자식 노드의 value가 더 크다면
+                largerNode = rightNode-1;
         }
-        else if(tmp-1 <= endNode){ //자식 노드가 1개인(왼쪽의 자식노드만 존재하는) 경우
-            if(arr[tempNode] < arr[tmp-1]) // 자식 노드의 value가 더 크다면
-                y = tmp-1;
+        else if(rightNode-1 <= endNode){ //자식 노드가 1개인(왼쪽의 자식노드만 존재하는) 경우
+            if(arr[tempNode] < arr[rightNode-1]) // 자식 노드의 value가 더 크다면
+                largerNode = rightNode-1;
         }
-        return y;
+        return largerNode;
     }
 
     private static void swap(int[] arr, int a, int b){
