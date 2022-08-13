@@ -9,6 +9,11 @@ package algorithm;
  * 2. v가 '방문안함'이라면 DFS(v)를 호출한다.
  */
 
+/* [시간 복잡도]
+ * 인접 [목록] 그래프 : 정점의 개수 + 간선의 개수 만큼의 시간 복잡도가 걸림
+ * (각 정점을 정확히 한 번 방문하고 각 간선도 두 번 고려하기 때문)
+ */
+
 import java.util.List;
 
 public class DepthFirstSearch {
