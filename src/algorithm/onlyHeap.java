@@ -1,32 +1,10 @@
 package algorithm;
-import java.util.*;
-// 메소드 5개 (배열->힙,)
 
-/* [트리(배열)를 힙으로 만드는 과정]
- * 1. 자식이 있는 가장 마지막 부모 노드부터 힙으로 만든다.
- * 2. 거슬러 올라가면서 더 큰 힙을 만든다.
- * 3. root 노드까지 힙으로 만들면 배열 전체가 힙이 된다.
- */
+import java.util.Arrays;
+import java.util.Scanner;
 
-/* [트리(배열)을 힙으로 만드는 방법]
- * 1. 자식 노드가 2개인 경우
- * - 부모 노드와 자식 노드를 비교해서, 가장 큰 값을 가지는 노드의 값을 부모 노드의 값과 교환한다. 
- * (부모 노드의 값이 가장 크다면 교환하지 않는다)
- * 
- * 2. 자식 노드가 한개인 경우
- * - 부모, 자식노드의 값을 비교해서 자식노드의 값이 더 크다면 교환한다. 
- * (아니라면 교환하지 않는다.)
- */
-
-/* [힙을 정렬하는 방법] 
- * 1. root 노드의 값을 바깥으로 빼고, 가장 마지막 leaf노드의 값을 root노드의 값으로 넣는다.
- * (배열에서는 root노드의 값을 가장 마지막 leaf 노드의 값과 교환하고 힙의 크기를 1 줄인다 --> 1개를 뺀 것처럼 동작)
- * 2. 힙의 구조가 깨졌으므로, 다시 힙으로 수정한다.
- * 3. 1번과 2번을 반복하다가, 더이상 뺄 값이 없다면 정렬 완료이다. (힙의 크기가 0이 된 경우)
- */
-
-class HeapSort2 {
-    public static void main(String[] args) {
+public class onlyHeap {
+	public static void main(String[] args) {
 
         @SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
@@ -48,22 +26,8 @@ class HeapSort2 {
         System.out.println("힙으로 변경한 배열");
         System.out.println(Arrays.toString(arr));
 
-        heapSort(arr); //힙을 이용해서 정렬하는 메서드
-
-        System.out.println("정렬 완료된 배열");
-        System.out.println(Arrays.toString(arr));
     }
 
-    // [힙을 정렬하는 방법] 
-    private static void heapSort(int[] arr) {
-        int eNN = arr.length-1;
-        while(eNN > 1) {
-            swap(arr, 1, eNN);	// 제일 큰 루트노드를 마지막 인덱스에 삽입하고, 마지막 인덱스를 제외한 힙정렬을 다시 만들어준다.
-            eNN--;
-            pushDown(arr, 1, eNN);
-        }
-    }
-    
     //eNN = endNodeNumber	(마지막 노드 인덱스)
     //tNN = tempNodeNumber 	(eNN의 부모 노드 인덱스)
     
