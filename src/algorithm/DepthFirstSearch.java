@@ -1,5 +1,14 @@
 package algorithm;
 
+// 깊이 우선 탐색 : 시작점을 기준으로 인접해있는 정점들을 차례대로 이동하는 방식 (순서를 기준)
+// 입력 : 그래프 G = (V, E)
+// 출력 : 방문하는 순서대로 출력된 정점들
+
+/* [깊이 우선 탐색 알고리즘]
+ * 1. V에 있는 각 정점을 전부 다 '방문 안함'으로 표시한다.
+ * 2. v가 '방문안함'이라면 DFS(v)를 호출한다.
+ */
+
 import java.util.List;
 
 public class DepthFirstSearch {
@@ -50,8 +59,20 @@ public class DepthFirstSearch {
 		
 		// 주어진 비방향 그래프를 깊이 우선 탐색으로 순회한다.
 		System.out.println("재귀를 사용한 깊이 우선 탐색 실행 결과");
-		//dfs(node[0]);
-		DFS(node[0]);
+		dfs(node[0]);
+	}
+
+	private static void dfs(Node node) {
+		System.out.println(node.getInfo() + " ");	// 정점 대응된 데이터를 출력한다.
+		node.setVisited(true);						// 해당 노드를 방문함으로 표시
+		
+		List<Node> neighbours = node.getNeighbours();	// 정점에 인접한 연결 목록들을 저장
+		
+		for(Node n : neighbours) {
+			if(n != null && !n.isVisited()) {	// 방문했는지 안했는지 확인
+				dfs(n);							// 방문하지 않았으면 내려가서 연결함.
+			}
+		}
 	}
 
 }
