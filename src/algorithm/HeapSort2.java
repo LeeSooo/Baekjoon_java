@@ -56,11 +56,11 @@ class HeapSort2 {
 
     // [힙을 정렬하는 방법] 
     private static void heapSort(int[] arr) {
-        int eNN = arr.length-1;
-        while(eNN > 1) {
-            swap(arr, 1, eNN);	// 제일 큰 루트노드를 마지막 인덱스에 삽입하고, 마지막 인덱스를 제외한 힙정렬을 다시 만들어준다.
-            eNN--;
-            pushDown(arr, 1, eNN);
+        int endNode = arr.length-1;
+        while(endNode > 1) {
+            swap(arr, 1, endNode);	// 제일 큰 루트노드를 마지막 인덱스에 삽입하고, 마지막 인덱스를 제외한 힙정렬을 다시 만들어준다.
+            endNode--;
+            pushDown(arr, 1, endNode);
         }
     }
     
@@ -69,40 +69,40 @@ class HeapSort2 {
     
     // [트리(배열)를 힙으로 만드는 과정]
     private static void buildHeap(int[] arr) {
-        int eNN = arr.length - 1; // 마지막 노드
-        int tNN = eNN/2 + 1; //1번째 리프노드 번호
+        int endNode = arr.length - 1; // 마지막 노드
+        int tempNode = endNode/2 + 1; //1번째 리프노드 번호
 
-        while(tNN > 1) {
-            tNN--; // 자식을 가지고 있는 마지막 부모노드부터 시작
-            pushDown(arr, tNN, eNN);
+        while(tempNode > 1) {
+            tempNode--; // 자식을 가지고 있는 마지막 부모노드부터 시작
+            pushDown(arr, tempNode, endNode);
         }
     }
 
-    private static void pushDown(int[] arr, int tNN, int eNN) {
-        int y = findLarger(arr, tNN, eNN); 
+    private static void pushDown(int[] arr, int tempNode, int endNode) {
+        int y = findLarger(arr, tempNode, endNode); 
         //자식 노드 중에서 루트 노드보다 더 큰 값을 가지는 노드 번호 얻어냄
 
-        while(arr[tNN] < arr[y]){
-            swap(arr, tNN, y);
-            tNN = y;
-            y = findLarger(arr, tNN, eNN);
+        while(arr[tempNode] < arr[y]){
+            swap(arr, tempNode, y);
+            tempNode = y;
+            y = findLarger(arr, tempNode, endNode);
             // leaf노드 쪽으로 내려가면서 값의 제자리를 찾아간다.
         }
     }
 
     //자식 노드 중에서 루트 노드보다 더 큰 값을 가지는 노드 번호 얻어냄
-    private static int findLarger(int[] arr, int tNN, int eNN){
-        int tmp = tNN*2+1; 	// 현재 tNN의 오른쪽 자식 노드의 번호
-        int y = tNN;		// 현재 tNN(eNN의 부모)노드의 번호
+    private static int findLarger(int[] arr, int tempNode, int endNode){
+        int tmp = tempNode*2+1; 	// 현재 tNN의 오른쪽 자식 노드의 번호
+        int y = tempNode;		// 현재 tNN(eNN의 부모)노드의 번호
 
-        if(tmp <= eNN){//자식 노드가 두개인 경우
-            if(arr[tNN] < arr[tmp]) //오른쪽 자식 노드의 value가 더 크다면
+        if(tmp <= endNode){//자식 노드가 두개인 경우
+            if(arr[tempNode] < arr[tmp]) //오른쪽 자식 노드의 value가 더 크다면
                 y = tmp;
             if(arr[y] < arr[tmp-1]) //왼쪽 자식 노드의 value가 더 크다면
                 y = tmp-1;
         }
-        else if(tmp-1 <= eNN){ //자식 노드가 1개인(왼쪽의 자식노드만 존재하는) 경우
-            if(arr[tNN] < arr[tmp-1]) // 자식 노드의 value가 더 크다면
+        else if(tmp-1 <= endNode){ //자식 노드가 1개인(왼쪽의 자식노드만 존재하는) 경우
+            if(arr[tempNode] < arr[tmp-1]) // 자식 노드의 value가 더 크다면
                 y = tmp-1;
         }
         return y;
