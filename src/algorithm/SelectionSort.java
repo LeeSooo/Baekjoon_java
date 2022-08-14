@@ -48,10 +48,12 @@ public class SelectionSort {
 		int temp;		// 교환을 하기 위해 임시로 저장되는 필드
 		
 		// A[i]부터 A[n-1]의 요소들 중 for문을 이용하여 최소값을 찾는다.
+		// i는 이동 시킬 위치를 가리킴!
 		for(int i = 0; i < A.length - 1; i++) {
 			min = i;	
 			
 			// 최소값을 찾는 방법 : 모든 값을 비교해보기(for문과 if문 이용)
+			// j는 비교할 대상을 가리킴!
 			for (int j = i + 1; j < A.length; j++) {
 				if(A[j] < A[min]) 
 					min = j;
