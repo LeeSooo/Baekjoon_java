@@ -72,7 +72,7 @@ class HeapSort2 {
         int endNode = arr.length - 1; // 마지막 노드
         int tempNode = endNode/2 + 1; //1번째 리프노드 번호
 
-        while(tempNode > 1) {
+        while(tempNode > 1) {	// tempNode가 2를 가리킬 때까지!
             tempNode--; // 자식을 가지고 있는 마지막 부모노드부터 시작
             pushDown(arr, tempNode, endNode);
         }
