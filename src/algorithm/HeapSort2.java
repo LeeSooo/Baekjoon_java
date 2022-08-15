@@ -54,7 +54,7 @@ class HeapSort2 {
         System.out.println(Arrays.toString(arr));
     }
 
-    // [힙을 정렬하는 방법] 
+    // [힙을 정렬하는 방법] : 루트노드를 제거(루트 노드 제거 시, 마지막 노드를 맨 위로 올림) => 다시 힙 정렬 (이 방법을 계속 반복!)
     private static void heapSort(int[] arr) {
         int endNode = arr.length-1;
         while(endNode > 1) {
@@ -82,11 +82,10 @@ class HeapSort2 {
         int larger = findLarger(arr, tempNode, endNode); 
         //자식 노드 중에서 루트 노드보다 더 큰 값을 가지는 노드 번호 얻어냄
 
-        while(arr[tempNode] < arr[larger]){
-            swap(arr, tempNode, larger);
-            tempNode = larger;
-            larger = findLarger(arr, tempNode, endNode);
-            // leaf노드 쪽으로 내려가면서 값의 제자리를 찾아간다.
+        while(arr[tempNode] < arr[larger]){					// 만약 부모노드 보다 큰 자식노드가 존재한다면
+            swap(arr, tempNode, larger);					// 현재 부모노드와 큰 자식노드를 바꾼다.
+            tempNode = larger;								// 그리고 기준(tempNode)를 현재의 자식노드로 변경한다.
+            larger = findLarger(arr, tempNode, endNode);	// leaf노드 쪽으로 내려가면서 값의 제자리를 찾아간다.
         }
     }
 
