@@ -1,7 +1,7 @@
 package algorithm;
 
 // 프로그램 4-3 너비 우선 탐색
-// 주어진 비방향 그래프를 너비우선탐색으로 순회한다.
+// 주어진 비방향 그래프를 너비우선탐색으로 순회한다.(거리를 기준)
 
 import java.util.LinkedList;
 import java.util.List;
