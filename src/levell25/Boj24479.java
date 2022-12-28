@@ -27,18 +27,18 @@ public class Boj24479 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 
-		int n = Integer.parseInt(st.nextToken()); // 정점 개수
-		int m = Integer.parseInt(st.nextToken()); // 간선 개수
-		int r = Integer.parseInt(st.nextToken()); // 시작 정점
+		int n = Integer.parseInt(st.nextToken()); // 정점 개수 V
+		int m = Integer.parseInt(st.nextToken()); // 간선 개수 E
+		int r = Integer.parseInt(st.nextToken()); // 시작 정점 
 
-		LinkedList<Integer>[] graph = new LinkedList[n + 1]; // 그래프
+		LinkedList<Integer>[] graph = new LinkedList[n + 1]; // 연결리스트로 그래프 구현
 
 		/* 정점 제작 */
 		for (int i = 1; i <= n; i++) {
 			graph[i] = new LinkedList<>();
 		}
 		
-		/* 간선 제작 */
+		/* 간선 연결 */
 		for (int i = 0; i < m; i++) {
 			st = new StringTokenizer(br.readLine());
 			int v1 = Integer.parseInt(st.nextToken());
@@ -69,9 +69,12 @@ public class Boj24479 {
 
 	// DFS (깊이 우선 탐색)
 	public static void DFS(int r, LinkedList<Integer>[] graph, boolean[] visited) {
+		// 정점에 인접한 연결 목록들을 저장 (스택 형식으로 이동)
 		Iterator<Integer> iter = graph[r].listIterator();
 
 		visited[r] = true; // 시작정점은 무조건 방문
+		// (현재 노드) 해당 노드를 방문함으로 표시
+		
 		result[r] = ++cnt; // 순서 입력
 
 		while (iter.hasNext()) { // 방문한 정점에 인접한 정점이 있다면

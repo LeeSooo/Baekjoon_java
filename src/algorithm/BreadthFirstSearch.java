@@ -2,6 +2,7 @@ package algorithm;
 
 // 프로그램 4-3 너비 우선 탐색
 // 주어진 비방향 그래프를 너비우선탐색으로 순회한다.(거리를 기준)
+// 자료구조 : 큐
 
 import java.util.LinkedList;
 import java.util.List;
@@ -11,7 +12,7 @@ public class BreadthFirstSearch {
 	private Queue<Node> queue;	// 방문할 정점들을 저장하는 큐
 	
 	public BreadthFirstSearch() {
-		queue =new LinkedList<Node>();
+		queue = new LinkedList<Node>();
 	}
 	
 	public void BFS(Node v) {

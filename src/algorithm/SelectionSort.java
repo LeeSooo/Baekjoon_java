@@ -44,7 +44,7 @@ public class SelectionSort {
 	// 선택 정렬 메소드 : 조건(최소값) 선택 정렬(오름차순 : 1~100) 
 	// 조건을 (최소값)으로 선택하여 정렬하는 알고리즘.
 	private static void selectionSort(int[] A) {
-		int min; 		// 조건 : 최소값을 저장하는 필드
+		int min; 		// 조건 : 최소값 인덱스를 저장하는 필드
 		int temp;		// 교환을 하기 위해 임시로 저장되는 필드
 		
 		// A[i]부터 A[n-1]의 요소들 중 for문을 이용하여 최소값을 찾는다.
